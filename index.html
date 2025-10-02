@@ -6,6 +6,12 @@
     <title>ToDo</title>
     <link rel="icon" href="images/icon-title.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
@@ -13,11 +19,33 @@
     </header>
     <main class="main">
       <section class="todo">
-        <div class="todo-header">
+        <header class="todo-header">
           <input class="input todo-input-add" type="text" name="add" />
           <button class="button button-add" id="add-button">Add</button>
+        </header>
+        <div class="todo-body">
+          <!-- <div class="task">
+            <p>Пойти в спортзал</p>
+            <button class="button-task button-task-done" type="button">
+              <img
+                class="task-icon task-icon-done"
+                src="icons/done.png"
+                alt=" task done"
+                width="20px"
+                height="20px"
+              />
+            </button>
+            <button class="button-task button-task-del" type="reset">
+              <img
+                class="task-icon task-icon-del"
+                src="icons/del.png"
+                alt="delete this task"
+                width="20px"
+                height="20px"
+              />
+            </button>
+          </div> -->
         </div>
-        <div class="todo-body"></div>
       </section>
     </main>
 
