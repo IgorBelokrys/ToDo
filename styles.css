@@ -68,7 +68,8 @@ p {
   justify-content: center;
   align-items: center;
   column-gap: 5px;
-  padding: 20px 40px;
+  height: var(--header-height);
+  padding: 0px 40px;
 }
 
 .todo-input-add {
@@ -109,7 +110,9 @@ p {
   flex-direction: column;
   box-sizing: border-box;
   width: 100%;
+  height: calc(100% - var(--header-height) - 20px);
   padding: 20px 40px;
+  overflow: scroll;
 }
 /* создаем стили для классов которые добавим через JS */
 
@@ -125,6 +128,12 @@ p {
 
 .task:hover {
   border-color: var(--color-dark-blue);
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
 }
 
 .button-task {
@@ -180,7 +189,7 @@ p {
   }
 
   .todo-header {
-    padding: 25px 20px;
+    padding: 0px 20px;
   }
 
   .todo-body {
