@@ -4,8 +4,18 @@ const input = document.querySelector(".input");
 const buttonAddTask = document.querySelector(".button-add");
 const todoBody = document.querySelector(".todo-body");
 
-buttonAddTask.addEventListener("click", () => {
+let tasks = [];
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function addTask() {
   const taskText = input.value.trim();
+
+  const newTask = { text: taskText, done: false };
+  tasks.push(newTask);
+  saveTasks();
 
   if (taskText === "") {
     return;
@@ -47,7 +57,7 @@ buttonAddTask.addEventListener("click", () => {
 
   const buttonbuttonTaskDel = document.createElement("button");
   buttonbuttonTaskDel.classList.add("button-task", "button-task-del");
-  buttonbuttonTaskDel.type = "reset";
+  buttonbuttonTaskDel.type = "button";
 
   const taskIconDel = document.createElement("img");
   taskIconDel.classList.add("task-icon", "task-icon-del");
@@ -69,4 +79,12 @@ buttonAddTask.addEventListener("click", () => {
   buttonbuttonTaskDone.addEventListener("click", () => {
     paragraph.classList.toggle("done");
   });
+}
+
+buttonAddTask.addEventListener("click", addTask);
+
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addTask();
+  }
 });
