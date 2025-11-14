@@ -1,34 +1,32 @@
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="style.css" />
-      <title>ToDo</title>
-    </head>
-    <body>
-      <section class="container">`
-        <main class="todo">
-          <h2 class="title">TASKS:</h2>
-
-          <form class="form-tasks">
-            <input
-              class="input-tasks"
-              type="text"
-              placeholder="Добавьте задачу"
-            />
-            <button class="add-btn" type="submit">
-              <img src="images/add.png" alt="" />
-            </button>
-          </form>
-
-          <div class="task-list list-new"></div>
-
-          <h2 class="title">DONE:</h2>
-
-          <div class="task-list list-done"></div>
-        </main>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+    <link rel="icon" href="images/icon-title.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo-header">Todo App</h1>
+    </header>
+    <main class="main">
+      <section class="todo">
+        <header class="todo-header">
+          <input class="input todo-input-add" type="text" name="add" />
+          <button class="button button-add" id="add-button">Add</button>
+        </header>
+        <div class="todo-body"></div>
       </section>
-      <script src="main.js"></script>
-    </body>
-  </html>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+:root {
+  --color-light: rgb(255, 255, 255);
+  --color-dark-gray: rgb(51, 61, 76);
+  --color-dark: rgb(22, 26, 36);
+  --color-red: rgb(167, 20, 20);
+  --color-dark-blue: rgb(4, 13, 25);
+  --color-green: rgb(0, 158, 40);
+  --header-height: 80px;
+  --border-radius: 8px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-dark-gray);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.button,
+.input {
+  border: none;
+}
+
+.header {
+  min-height: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid var(--color-red);
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.logo-header {
+  margin: 0;
+  color: var(--color-light);
+}
+
+.main {
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  height: 60%;
+  width: 700px;
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 15px 10px rgba(10, 10, 10, 0.3);
+}
+
+.todo-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  height: var(--header-height);
+  padding: 0px 40px;
+}
+
+.todo-input-add {
+  width: 100%;
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark-blue);
+  box-shadow: 0 0 9px 3px rgba(10, 10, 10, 0.3);
+  color: var(--color-light);
+  padding: 10px 8px;
+  font-size: 18px;
+}
+
+.todo-input-add:hover {
+  background-color: rgb(5, 2, 25);
+}
+
+.todo-input-add:focus {
+  outline: none;
+  background-color: rgb(5, 2, 25);
+}
+
+.button-add {
+  background-color: var(--color-red);
+  color: var(--color-light);
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  text-transform: lowercase;
+  font-size: 18px;
+  box-shadow: 0 0 9px 3px rgba(10, 10, 10, 0.3);
+}
+
+.button-add:hover {
+  background-color: rgb(111, 15, 15);
+}
+
+.todo-body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - var(--header-height) - 20px);
+  padding: 20px 40px;
+  overflow: scroll;
+}
+/* создаем стили для классов которые добавим через JS */
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: var(--color-light);
+  padding: 15px 0 10px;
+  border-bottom: 1.2px solid var(--color-dark-gray);
+}
+
+.task:hover {
+  border-color: var(--color-dark-blue);
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.button-task {
+  background-color: transparent;
+  border-radius: 100%;
+  padding: 8px;
+  border: none;
+}
+
+.button-task:hover {
+  cursor: pointer;
+  background-color: var(--color-dark-gray);
+}
+
+.button-task-done {
+  margin-left: auto;
+}
+
+.task-icon-done {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(97%) saturate(300%)
+    hue-rotate(70deg) brightness(1.1) contrast(1.1);
+}
+
+.task-icon-del {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(88%) saturate(1600%)
+    hue-rotate(350deg) brightness(100%) contrast(110%);
+}
+
+/* adaptive start */
+
+@media (max-width: 1023px) {
+  .todo {
+    width: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+  .todo {
+    width: 300px;
+    height: 70%;
+  }
+
+  .todo-input-add {
+    font-size: 14px;
+  }
+
+  .button-add {
+    font-size: 14px;
+  }
+
+  .task {
+    font-size: 14px;
+  }
+
+  .todo-header {
+    padding: 0px 20px;
+  }
+
+  .todo-body {
+    padding: 10px 20px;
+  }
+}
+
+/* adaptive end */
